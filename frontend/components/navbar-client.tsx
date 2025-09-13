@@ -16,10 +16,10 @@ export default function ClientNavbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const mobileNavItems = [
-    { name: "🏭 Manufacturer", href: "/manufacturer/login", color: "text-blue-600" },
-    { name: "🔬 Laboratory", href: "/laboratory/login", color: "text-purple-600" },
-    { name: "🏪 Vendor", href: "/vendor/login", color: "text-orange-600" },
-    { name: "🏢 Warehouse", href: "/warehouse/login", color: "text-yellow-600" },
+    { name: "🏭 Manufacturer", href: "/manufacturer/login", color: "text-white" },
+    { name: "🔬 Laboratory", href: "/laboratory/login", color: "text-white" },
+    { name: "🏪 Vendor", href: "/vendor/login", color: "text-white" },
+    { name: "🏢 Warehouse", href: "/warehouse/login", color: "text-white" },
   ];
 
   return (
@@ -56,7 +56,8 @@ export default function ClientNavbar() {
               <a
                 key={idx}
                 href={item.href}
-                className={`block w-full px-4 py-3 text-left font-medium hover:bg-gray-100 dark:hover:bg-neutral-800 rounded-lg transition-all duration-200 ${item.color} dark:text-white`}
+                className={`block w-full px-4 py-3 text-left font-bold hover:bg-gray-100 dark:hover:bg-neutral-800 rounded-lg transition-all duration-200`}
+                style={{ color: '#ffffff' }}
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}

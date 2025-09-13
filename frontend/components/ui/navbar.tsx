@@ -124,25 +124,29 @@ export const NavbarAuth = () => {
     <div className="flex items-center space-x-3">
       <a
         href="/manufacturer/login"
-        className="rounded-lg bg-blue-600 px-3 py-2 text-sm font-medium text-white hover:bg-blue-700 transition-all duration-200 hover:scale-105 shadow-lg"
+        className="rounded-lg bg-blue-600 px-3 py-2 text-sm font-bold transition-all duration-200 hover:scale-105 shadow-lg hover:bg-blue-700"
+        style={{ color: '#ffffff !important' }}
       >
         Manufacturer
       </a>
       <a
         href="/laboratory/login"
-        className="rounded-lg bg-purple-600 px-3 py-2 text-sm font-medium text-white hover:bg-purple-700 transition-all duration-200 hover:scale-105 shadow-lg"
+        className="rounded-lg bg-purple-600 px-3 py-2 text-sm font-bold transition-all duration-200 hover:scale-105 shadow-lg hover:bg-purple-700"
+        style={{ color: '#ffffff !important' }}
       >
         Laboratory
       </a>
       <a
         href="/vendor/login"
-        className="rounded-lg bg-orange-600 px-3 py-2 text-sm font-medium text-white hover:bg-orange-700 transition-all duration-200 hover:scale-105 shadow-lg"
+        className="rounded-lg bg-orange-600 px-3 py-2 text-sm font-bold transition-all duration-200 hover:scale-105 shadow-lg hover:bg-orange-700"
+        style={{ color: '#ffffff !important' }}
       >
         Vendor
       </a>
       <a
         href="/warehouse/login"
-        className="rounded-lg bg-yellow-600 px-3 py-2 text-sm font-medium text-white hover:bg-yellow-700 transition-all duration-200 hover:scale-105 shadow-lg"
+        className="rounded-lg bg-yellow-600 px-3 py-2 text-sm font-bold transition-all duration-200 hover:scale-105 shadow-lg hover:bg-yellow-700"
+        style={{ color: '#ffffff !important' }}
       >
         Warehouse
       </a>
