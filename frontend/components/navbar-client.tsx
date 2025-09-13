@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { 
   Navbar, 
   NavBody, 
@@ -14,6 +14,11 @@ import {
 
 export default function ClientNavbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const mobileNavItems = [
     { name: "🏭 Manufacturer", href: "/manufacturer/login", color: "text-white" },
@@ -21,6 +26,10 @@ export default function ClientNavbar() {
     { name: "🏪 Vendor", href: "/vendor/login", color: "text-white" },
     { name: "🏢 Warehouse", href: "/warehouse/login", color: "text-white" },
   ];
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <>

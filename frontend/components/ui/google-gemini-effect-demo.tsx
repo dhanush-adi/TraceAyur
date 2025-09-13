@@ -1,12 +1,18 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { GoogleGeminiEffect } from "./google-gemini-effect";
-import { useScroll, useTransform } from "motion/react";
+import { useScroll, useTransform } from "framer-motion";
 
 export function GoogleGeminiEffectDemo() {
   const ref = useRef(null);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const { scrollYProgress } = useScroll({
-    target: ref,
+    target: isMounted && typeof window !== 'undefined' ? ref : undefined,
     offset: ["start start", "end start"],
   });
 

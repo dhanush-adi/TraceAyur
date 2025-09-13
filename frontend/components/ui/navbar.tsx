@@ -9,7 +9,7 @@ import {
   useMotionValueEvent,
 } from "framer-motion"; // Corrected import from "motion/react" to "framer-motion"
 
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 
 interface NavbarProps {
@@ -52,13 +52,20 @@ interface MobileNavMenuProps {
 
 export const Navbar = ({ children, className }: NavbarProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const { scrollY } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
+  const [isMounted, setIsMounted] = useState(false);
   const [visible, setVisible] = useState<boolean>(false);
 
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const { scrollY } = useScroll({
+    target: isMounted && typeof window !== 'undefined' ? ref : undefined,
+    offset: ["start start", "end start"],
+  });
+
   useMotionValueEvent(scrollY, "change", (latest) => {
+    if (!isMounted) return;
     if (latest > 100) {
       setVisible(true);
     } else {

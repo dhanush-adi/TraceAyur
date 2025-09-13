@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { LampContainer } from "./ui/lamp";
 import { useStacks } from "../hooks/use-stacks";
 import { abbreviateAddress } from "../lib/stx-utils";

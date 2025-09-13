@@ -2,12 +2,12 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
+import ClientOnly from "@/components/client-only";
 import GlowingEffectDemo from "@/components/ui/glowing-effect-demo";
 import WavyBackgroundDemo from "@/components/wavy-background-demo";
 import WobbleCardDemo from "@/components/wobble-card-demo";
 import InfiniteMovingCardsDemo from "@/components/infinite-moving-cards-demo";
 import CardHoverEffectDemo from "@/components/card-hover-effect-demo";
-import StickyScrollRevealDemo from "@/components/sticky-scroll-reveal-demo";
 
 export default function Home() {
   useEffect(() => {
@@ -17,16 +17,20 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white flex flex-col items-center justify-start py-12 px-4">
       <section className="w-full mb-6">
-        <WavyBackgroundDemo />
-        <div className="mt-12">
-          <WobbleCardDemo />
-          <InfiniteMovingCardsDemo />
-        </div>
+        <ClientOnly>
+          <WavyBackgroundDemo />
+          <div className="mt-12">
+            <WobbleCardDemo />
+            <InfiniteMovingCardsDemo />
+          </div>
+        </ClientOnly>
       </section>
 
       <section className="w-full max-w-6xl mx-auto mb-8">
         <div className="z-50">
-          <CardHoverEffectDemo />
+          <ClientOnly>
+            <CardHoverEffectDemo />
+          </ClientOnly>
         </div>
       </section>
 
@@ -39,8 +43,8 @@ export default function Home() {
                   <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-blue-500/30">
                     <span className="text-3xl" role="img" aria-label="Factory">🏭</span>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">Manufacturer Portal</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">Product registration, batch management, quality control</p>
+                  <h3 className="text-xl font-bold mb-2" style={{ color: '#ffffff !important' }}>Manufacturer Portal</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: '#ffffff !important' }}>Product registration, batch management, quality control</p>
                 </div>
               </div>
             </Link>
@@ -51,8 +55,8 @@ export default function Home() {
                   <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-purple-500/30">
                     <span className="text-3xl" role="img" aria-label="Microscope">🔬</span>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">Laboratory Portal</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">Quality testing, certification, compliance verification</p>
+                  <h3 className="text-xl font-bold mb-2" style={{ color: '#ffffff !important' }}>Laboratory Portal</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: '#ffffff !important' }}>Quality testing, certification, compliance verification</p>
                 </div>
               </div>
             </Link>
@@ -63,8 +67,8 @@ export default function Home() {
                   <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-700 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-orange-500/30">
                     <span className="text-3xl" role="img" aria-label="Shop">🏪</span>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">Vendor Portal</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">Product scanning, inventory management, authenticity verification</p>
+                  <h3 className="text-xl font-bold mb-2" style={{ color: '#ffffff !important' }}>Vendor Portal</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: '#ffffff !important' }}>Product scanning, inventory management, authenticity verification</p>
                 </div>
               </div>
             </Link>
@@ -75,8 +79,8 @@ export default function Home() {
                   <div className="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-yellow-500/30">
                     <span className="text-3xl" role="img" aria-label="Warehouse">🏬</span>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">Warehouse Portal</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">Checkpoint scanning, inventory tracking, security monitoring</p>
+                  <h3 className="text-xl font-bold mb-2" style={{ color: '#ffffff !important' }}>Warehouse Portal</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: '#ffffff !important' }}>Checkpoint scanning, inventory tracking, security monitoring</p>
                 </div>
               </div>
             </Link>

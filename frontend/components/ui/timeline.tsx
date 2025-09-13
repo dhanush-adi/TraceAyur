@@ -4,7 +4,7 @@ import {
   useScroll,
   useTransform,
   motion,
-} from "motion/react";
+} from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 
 interface TimelineEntry {
@@ -16,8 +16,10 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     if (ref.current) {
       const rect = ref.current.getBoundingClientRect();
       setHeight(rect.height);
@@ -25,7 +27,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   }, [ref]);
 
   const { scrollYProgress } = useScroll({
-    target: containerRef,
+    target: isMounted && typeof window !== 'undefined' ? containerRef : undefined,
     offset: ["start 10%", "end 50%"],
   });
 
