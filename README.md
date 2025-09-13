@@ -1,50 +1,71 @@
 # TraceAyur - Blockchain-Based Botanical Traceability System
 
-## Project Overview
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)]()
+[![License](https://img.shields.io/badge/license-MIT-green.svg)]()
+[![Next.js](https://img.shields.io/badge/Next.js-15.2.4-black)]()
+[![React](https://img.shields.io/badge/React-19-blue)]()
+[![Hyperledger Fabric](https://img.shields.io/badge/Hyperledger%20Fabric-2.5.4-orange)]()
 
-TraceAyur is a comprehensive proof-of-concept blockchain-based botanical traceability system for Ayurvedic herbs, built with Hyperledger Fabric, Next.js, and React Native. The system provides end-to-end traceability from collection to consumer, with geo-fencing, quality validation, and smart labeling capabilities.
+## 🌿 Project Overview
 
-## Architecture
+TraceAyur is a comprehensive blockchain-based botanical traceability system for Ayurvedic herbs and botanical products. Built with Hyperledger Fabric, Next.js, and React Native, it provides end-to-end transparency from collection to consumer with certificate-based authentication, geo-fencing, and advanced quality validation.
 
-### 1. Blockchain Layer (Hyperledger Fabric)
+## 🏗️ System Architecture
+
+```
+┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐
+│   Mobile App    │  │   Web Frontend  │  │   Backend API   │
+│  (React Native) │  │    (Next.js)    │  │   (Node.js)     │
+└─────────┬───────┘  └─────────┬───────┘  └─────────┬───────┘
+          │                    │                    │
+          └────────────────────┼────────────────────┘
+                               │
+                    ┌─────────┴───────┐
+                    │ Hyperledger     │
+                    │ Fabric Network  │
+                    │  (Chaincode)    │
+                    └─────────────────┘
+```
+
+### 🔗 Core Components
+
+#### 1. **Blockchain Layer** - Hyperledger Fabric
 - **Location**: `chaincode/src/herbTraceContract.ts`
-- **Purpose**: Smart contracts for geo-fencing, quality gates, supply chain validation
 - **Features**: 
-  - Collection event validation with GPS coordinates
-  - Quality test recording with threshold checking
-  - Processing step tracking with environmental conditions
-  - Provenance creation with QR code generation
-  - Transfer of custody with blockchain immutability
+  - 🌍 Geo-fencing validation with GPS coordinates
+  - 🔬 Quality gate enforcement with automated thresholds
+  - 📦 Supply chain step tracking with immutable records
+  - 🏷️ Provenance creation with blockchain-backed QR codes
+  - 🔄 Transfer of custody with cryptographic validation
 
-### 2. Backend API (Node.js/Express)
+#### 2. **Backend API** - Node.js + Express
 - **Location**: `backend/`
-- **Purpose**: REST APIs and real-time communication
-- **Key Routes**:
-  - `/api/blockchain/*` - Blockchain interaction
-  - `/api/collector/*` - Mobile collector operations
-  - `/api/quality/*` - Quality test management
-  - `/api/dashboard/*` - Dashboard metrics
-  - `/api/provenance/*` - QR code and traceability
-  - `/api/vendor/*` - Vendor operations
-  - `/api/warehouse/*` - Warehouse management
+- **Authentication**: Certificate-based + JWT tokens
+- **Key Features**:
+  - RESTful APIs for all stakeholder operations
+  - Real-time updates with Socket.IO
+  - Automated quality validation
+  - Environmental monitoring integration
+  - Secure file storage and QR generation
 
-### 3. Frontend (Next.js 15 + React 19)
+#### 3. **Web Frontend** - Next.js 15 + React 19
 - **Location**: `frontend/`
-- **Purpose**: Web interfaces for all stakeholders
-- **Key Pages**:
-  - Manufacturer dashboard and QR generation
-  - Vendor shipment tracking
-  - Warehouse inventory and environmental monitoring
-  - Customer traceability interface
-
-### 4. Mobile DApp (React Native/Expo)
-- **Location**: `mobile/`
-- **Purpose**: Collector interface with offline capabilities
+- **UI**: Modern glassmorphism design with enhanced portal cards
 - **Features**:
-  - GPS-enabled collection recording
-  - Offline data storage with sync
-  - Photo documentation
-  - Species selection and validation
+  - 🏭 **Manufacturer Portal**: Product registration, batch management
+  - 🔬 **Laboratory Portal**: Quality testing, certification management
+  - 🏪 **Vendor Portal**: Inventory tracking, product scanning
+  - 🏬 **Warehouse Portal**: Checkpoint scanning, security monitoring
+  - 📱 Responsive design with mobile-first approach
+
+#### 4. **Mobile App** - React Native + Expo
+- **Location**: `mobile/`
+- **Purpose**: Field operations for farmers and customers
+- **Features**:
+  - 🌱 **Farmer Portal**: Crop registration, harvest logging
+  - 👤 **Customer Portal**: Product verification, traceability viewing
+  - 📍 GPS-enabled data collection with offline sync
+  - 📸 Photo documentation and species validation
 
 ## Getting Started
 
