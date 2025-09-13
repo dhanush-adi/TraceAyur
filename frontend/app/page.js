@@ -3,7 +3,6 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import GlowingEffectDemo from "@/components/ui/glowing-effect-demo";
-import LampDemo from "@/components/lamp-demo";
 import WavyBackgroundDemo from "@/components/wavy-background-demo";
 import WobbleCardDemo from "@/components/wobble-card-demo";
 import InfiniteMovingCardsDemo from "@/components/infinite-moving-cards-demo";
@@ -27,18 +26,12 @@ export default function Home() {
 
       <section className="w-full max-w-6xl mx-auto mb-8">
         <div className="z-50">
-          <LampDemo />
           <CardHoverEffectDemo />
         </div>
       </section>
 
       <section className="w-full max-w-5xl mx-auto mt-12">
         <div className="mx-auto text-center mb-6">
-          <h2 className="text-3xl md:text-4xl font-extrabold">TraceAyur — Supply Chain Traceability</h2>
-          <p className="text-gray-300 max-w-3xl mx-auto mt-3">
-            Trace botanical products across manufacturers, laboratories, vendors and warehouses with cryptographic proofs and certificate-based authentication.
-          </p>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
             <Link href="/manufacturer/login" className="group">
               <div className="relative bg-gradient-to-br from-white/5 via-white/10 to-white/5 backdrop-blur-lg rounded-xl p-6 border-2 border-blue-500/30 hover:border-blue-400/50 hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20">
