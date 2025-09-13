@@ -116,7 +116,7 @@ export default function LaboratoryLogin() {
                     placeholder="Enter registered Lab ID"
                     value={formData.labId}
                     onChange={(e) => setFormData({ ...formData, labId: e.target.value })}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-800 text-white placeholder-gray-400"
                     required
                   />
                 </div>
@@ -130,7 +130,7 @@ export default function LaboratoryLogin() {
                     placeholder="NABL accreditation number"
                     value={formData.naacertificate}
                     onChange={(e) => setFormData({ ...formData, naacertificate: e.target.value })}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-800 text-white placeholder-gray-400"
                     required
                   />
                 </div>
@@ -144,7 +144,7 @@ export default function LaboratoryLogin() {
                     placeholder="AYUSH/FDA lab license"
                     value={formData.labLicense}
                     onChange={(e) => setFormData({ ...formData, labLicense: e.target.value })}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-800 text-white placeholder-gray-400"
                     required
                   />
                 </div>
@@ -158,7 +158,7 @@ export default function LaboratoryLogin() {
                     placeholder="Authorized technician ID"
                     value={formData.technicianId}
                     onChange={(e) => setFormData({ ...formData, technicianId: e.target.value })}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-800 text-white placeholder-gray-400"
                     required
                   />
                 </div>
@@ -171,7 +171,7 @@ export default function LaboratoryLogin() {
                     id="password"
                     value={formData.password}
                     onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-800 text-white placeholder-gray-400"
                     required
                   />
                 </div>
